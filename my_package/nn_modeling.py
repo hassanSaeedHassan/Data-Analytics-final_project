@@ -175,9 +175,8 @@ class nn_modeling:
         return focal_loss_fixed
 
     def save_model(self,filename):
-        # Save the model to disk using pickle
-        with open(filename, 'wb') as f:
-            pickle.dump(self.model, f)
+        # Save the model to disk
+        self.model.save(filename)
         
         # Return the path to the saved model file
         return filename
