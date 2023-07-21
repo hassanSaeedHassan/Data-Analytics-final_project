@@ -1,0 +1,14 @@
+aequitas_lite==0.43.5
+association_metrics==0.0.1
+imbalanced_learn==0.10.1
+imblearn==0.0
+matplotlib==3.6.2
+missingno==0.5.2
+numpy==1.23.5
+pandas==1.5.2
+pywebio==1.8.2
+scikit_learn==1.2.0
+scipy==1.9.3
+seaborn==0.12.2
+xgboost==0.90
+yellowbrick==1.5
