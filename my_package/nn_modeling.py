@@ -97,7 +97,7 @@ class nn_modeling:
         print("Predictive Equality: ", to_pct(predictive_equality))
 
         # extract the predicted class labels
-        thresh = 0.5 # or round(threshold_fixed_fpr, 2)
+        thresh = round(threshold_fixed_fpr, 2)
         predictions = np.where(self.y_pred > thresh, 1, 0) # or use the threshold instead of 0.5?
 
         accuracy = accuracy_score(y_test, predictions)
