@@ -5,7 +5,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import backend as K
-
+import numpy as np
 
 class nn_modeling:
     
