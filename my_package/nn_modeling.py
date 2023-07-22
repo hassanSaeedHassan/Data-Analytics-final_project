@@ -1,3 +1,57 @@
+import xgboost as xgb
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV ,ShuffleSplit 
+from yellowbrick.classifier import ClassificationReport
+from sklearn.metrics import roc_curve, auc, confusion_matrix, classification_report, roc_auc_score 
+from sklearn.metrics import confusion_matrix, roc_curve, auc, roc_auc_score
+from imblearn.over_sampling import RandomOverSampler,SMOTE,SMOTENC,ADASYN
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.tree import DecisionTreeClassifier #import DecisionTreeClassifier function from scikit-learn
+from sklearn.neighbors import KNeighborsClassifier #import KNeighborsClassifier function from scikit-learn
+from sklearn.ensemble import RandomForestClassifier  # Import RandomForestClassifier function from scikit-learn
+from sklearn.ensemble import GradientBoostingClassifier  # Import GradientBoostingClassifier function from scikit-learn
+from yellowbrick.classifier import ClassificationReport #import ClassificationReport function from yellowbrick library
+from xgboost import XGBClassifier  # Import XGBoost function from xgboost library
+from sklearn.metrics import roc_auc_score,roc_curve
+import pickle #import pickle library to serialize and deserialize Python objects
+import warnings #import warnings library to handle warnings
+import pywebio  # Web app tool for developing end user apps
+from pywebio import * #import all functions from pywebio library
+from pywebio.input import * #import input functions from pywebio library
+from pywebio.output import * #import output functions from pywebio library
+from pprint import pprint  # Pretty print library
+import random as rd #import random library as rd
+import numpy as np  # Import numpy for numeric calculations
+import pandas as pd  # Import pandas for dataframe analysis
+import seaborn as sns  # Import seaborn for visualization
+from collections import Counter #import Counter function from collections library
+from scipy.stats import randint, uniform #import randint and uniform functions from scipy.stats library
+import matplotlib.pyplot as plt  # Import matplotlib for visualization
+from matplotlib.pyplot import Figure #import Figure function from matplotlib.pyplot library
+from sklearn import preprocessing  # Import preprocessing function from scikit-learn
+from imblearn.over_sampling import SMOTE  # Import SMOTE function from imblearn
+from sklearn.model_selection import train_test_split  # Import train_test_split function from scikit-learn
+from imblearn.under_sampling import RandomUnderSampler  # Import RandomUnderSampler function from imblearn
+from sklearn.preprocessing import MinMaxScaler, LabelEncoder, StandardScaler  # Import various preprocessing functions from scikit-learn
+from sklearn.linear_model import LogisticRegression  # Import Logistic Regression function from scikit-learn
+from sklearn.feature_selection import RFE  # Import Recursive Feature Elimination function from scikit-learn
+from sklearn.tree import DecisionTreeClassifier #import DecisionTreeClassifier function from scikit-learn
+from sklearn.neighbors import KNeighborsClassifier #import KNeighborsClassifier function from scikit-learn
+from sklearn.ensemble import RandomForestClassifier  # Import RandomForestClassifier function from scikit-learn
+from sklearn.ensemble import GradientBoostingClassifier  # Import GradientBoostingClassifier function from scikit-learn
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV  
+from yellowbrick.classifier import ClassificationReport #import ClassificationReport function from yellowbrick library
+from sklearn.metrics import roc_curve, auc, confusion_matrix, classification_report, roc_auc_score  
+from sklearn.svm import SVC  # Import Support Vector Machine function from scikit-learn
+from xgboost import XGBClassifier  # Import XGBoost function from xgboost library
+from mpl_toolkits import mplot3d  # Import 3D plotting function from matplotlib
+from sklearn.utils import class_weight  # Import class_weight function from scikit-learn
+import warnings
+warnings.filterwarnings('ignore')
+from aequitas.group import Group 
+
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import r2_score
 from sklearn.metrics import ConfusionMatrixDisplay
