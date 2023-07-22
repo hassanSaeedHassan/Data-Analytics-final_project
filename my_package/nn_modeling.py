@@ -152,9 +152,9 @@ class nn_modeling:
 
         # extract the predicted class labels
         thresh = round(threshold_fixed_fpr, 2)
-        predictions = np.where(self.y_pred > thresh, 1, 0) # or use the threshold instead of 0.5?
+        predictions = np.where(self.y_pred > thresh, 1, 0) 
 
-        accuracy = accuracy_score(y_test, predictions)
+        accuracy = accuracy_score(self.y_test, predictions)
         axes[1].bar(['Accuracy'], [accuracy], color=['purple'])
         axes[1].set_ylim([0, 1.5])
         axes[1].set_ylabel('Accuracy')
@@ -205,6 +205,7 @@ class nn_modeling:
         fig.tight_layout()
         plt.show()
 
+    @keras.saving.register_keras_serializable(name="f1_func")
     def f1(self, y_true, y_pred): #taken from old keras source code
         true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
         possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
@@ -230,7 +231,10 @@ class nn_modeling:
 
     def save_model(self,filename):
         # Save the model to disk
-        self.model.save(filename)
+        self.model.save(filename+".keras")
         
+        # Now, we can simply load without worrying about our custom objects or functions.
+        # reconstructed_model = keras.models.load_model("filename.keras")
+
         # Return the path to the saved model file
         return filename
