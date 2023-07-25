@@ -89,7 +89,7 @@ class modeling:
         if search_type == 'grid':
             search = GridSearchCV(self.model, param_grid,cv=ShuffleSplit(n_splits=1, test_size=0.2, random_state=42),scoring='roc_auc',verbose=2,n_jobs=-1)
         elif search_type == 'random':
-            search = RandomizedSearchCV(self.model, param_grid,scoring='roc_auc',cv=ShuffleSplit(n_splits=1, test_size=0.2, random_state=42),n_iter=10,verbose=2,n_jobs=-1)
+            search = RandomizedSearchCV(self.model, param_grid,scoring='roc_auc',cv=ShuffleSplit(n_splits=1, test_size=0.2, random_state=42),n_iter=20,verbose=2,n_jobs=-1)
         elif search_type == 'bayesian':
             search = BayesSearchCV(self.model, param_grid,  scoring='roc_auc')
         else:
