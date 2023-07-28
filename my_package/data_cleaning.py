@@ -9,20 +9,21 @@ import association_metrics as am
 from scipy.stats import shapiro
 class data_cleaning:
     
-    def __init__(self, filename):
+    def __init__(self, filename,change=True):
         self.data = pd.read_csv(filename)
         self.data.drop('device_fraud_count',axis=1,inplace=True)
-        self.data['fraud_bool']=self.data['fraud_bool'].astype('category')
-        self.data['income']= pd.Categorical(round(self.data['income'],2) ,categories=sorted(round(self.data['income'],2).unique()), ordered=True)
-        self.data['customer_age']= pd.Categorical(self.data['customer_age'] ,categories=[10,20,30,40,50,60,70,80,90], ordered=True)
-        self.data['email_is_free']=self.data['email_is_free'].astype('category')
-        self.data['phone_home_valid']=self.data['phone_home_valid'].astype('category')
-        self.data['phone_mobile_valid']=self.data['phone_mobile_valid'].astype('category')
-        self.data['has_other_cards']=self.data['has_other_cards'].astype('category')
-        self.data['foreign_request']=self.data['foreign_request'].astype('category')
-        self.data['keep_alive_session']=self.data['keep_alive_session'].astype('category')
-        self.data['source']=self.data['source'].astype('category')
-        self.data['device_distinct_emails_8w']=self.data['device_distinct_emails_8w'].astype('category')
+        if change:
+            self.data['fraud_bool']=self.data['fraud_bool'].astype('category')
+            self.data['income']= pd.Categorical(round(self.data['income'],2) ,categories=sorted(round(self.data['income'],2).unique()), ordered=True)
+            self.data['customer_age']= pd.Categorical(self.data['customer_age'] ,categories=[10,20,30,40,50,60,70,80,90], ordered=True)
+            self.data['email_is_free']=self.data['email_is_free'].astype('category')
+            self.data['phone_home_valid']=self.data['phone_home_valid'].astype('category')
+            self.data['phone_mobile_valid']=self.data['phone_mobile_valid'].astype('category')
+            self.data['has_other_cards']=self.data['has_other_cards'].astype('category')
+            self.data['foreign_request']=self.data['foreign_request'].astype('category')
+            self.data['keep_alive_session']=self.data['keep_alive_session'].astype('category')
+            self.data['source']=self.data['source'].astype('category')
+            self.data['device_distinct_emails_8w']=self.data['device_distinct_emails_8w'].astype('category')
         
     
     def check_duplicates(self):
