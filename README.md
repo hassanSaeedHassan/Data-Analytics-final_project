@@ -89,7 +89,7 @@ our repo contain four folders each for one step and the my_package folder which 
 | Random Forest     |  0.805 |33.39%     | 34.14%|
 | Neural Network  | 0.884  | 51.88%     |  84.36%|
 | XGBoost | 0.867  |46.63%      | 76.07%|
-
+Note: AUC stands for Area Under the Curve, TPR stands for True Positive Rate (Sensitivity/Recall), FPR stands for False Positive Rate, and Predictive Equality is the measure of fairness. The higher the Predictive Equality score, the more equitable the model's predictions are across protected groups.
 
 
 ## step 1 results after tuning the models and adding 3 different models
@@ -194,6 +194,47 @@ The tuning and addition of new models have led to improvements in both performan
       | AdaBoost           | 0.885     | 52.50%  | 100.00%             |
       | CatBoost           | 0.892     | 54.55%  | 100.00%             |
       | LGBM               | 0.876     | 49.44%  | 100.00%             |
+
+
+# Step 3 handling the imbalanced problem:
+1.Experiment 1:(using random undersampling)
+Here are some reasons why one might use random undersampling on imbalanced data:
+
+1. **Address Class Imbalance**: In imbalanced datasets, the majority class may dominate the learning process, leading to biased models that perform poorly on the minority class. By undersampling the majority class, you balance the class distribution, allowing the model to give more attention to the minority class during training.
+
+2. **Reduce Overfitting**: When the class distribution is highly imbalanced, the classifier may become overfit to the majority class and struggle to generalize to unseen data. Random undersampling can reduce the risk of overfitting by providing a more balanced training set.
+
+3. **Faster Training**: Imbalanced datasets with a large majority class can result in longer training times for the model. Random undersampling reduces the size of the training set, making the training process faster and more efficient.
+
+However, random undersampling also has its drawbacks:
+
+1. **Information Loss**: Random undersampling discards some samples from the majority class, potentially leading to the loss of valuable information present in those samples.
+
+2. **Risk of Underfitting**: If the undersampling is too aggressive, it may remove essential information, resulting in underfitting, where the model fails to capture the underlying patterns in the data.
+
+3. **Potential Bias**: Random undersampling can introduce bias by removing samples randomly from the majority class, potentially leading to a skewed representation of the data.
+
+steps and result of experiment:   
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are:
+   | Model                | AUC       | TPR      | Predictive Equality |
+   |----------------------|-----------|----------|---------------------|
+   | Logistic Regression  | 0.8697    | 47.12%   | 95.99%              |
+   | Random Forest        | 0.8701    | 48.33%   | 99.96%              |
+   | XGBoost              | 0.8858    | 52.08%   | 85.67%              |
+   | Deep Learning        | 0.8819    | 50.49%   | 63.85%              |
+   | AdaBoost             | 0.8827    | 51.77%   | 100.00%             |
+   | CatBoost             | 0.8921    | 54.10%   | 89.29%              |
+   | LGBM                 | 0.8889    | 52.74%   | 87.27%              |
+
+
+
+
+
 
 
 
