@@ -104,7 +104,6 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 | CatBoost | 0.895  |55.14%    |   86.27%|
 | LGBM |0.886  |51.91%    |    79.99%|
 
-Certainly! Here are the general comments on the baseline and step 1 results:
 
 ### Baseline Results:
 - The logistic regression model shows reasonable performance, with a good AUC and a moderate True Positive Rate (TPR). The fairness evaluation indicates good predictive equality, but there is still room for improvement in fairness across protected groups.
