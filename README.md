@@ -221,15 +221,15 @@ steps and result of experiment:
    - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
    - 5. we have used the same hyperparameter earned from step 1 for each model.
    - 6. the results of this experiment are:
-   | Model                | AUC       | TPR      | Predictive Equality |
-   |----------------------|-----------|----------|---------------------|
-   | Logistic Regression  | 0.8697    | 47.12%   | 95.99%              |
-   | Random Forest        | 0.8701    | 48.33%   | 99.96%              |
-   | XGBoost              | 0.8858    | 52.08%   | 85.67%              |
-   | Deep Learning        | 0.8819    | 50.49%   | 63.85%              |
-   | AdaBoost             | 0.8827    | 51.77%   | 100.00%             |
-   | CatBoost             | 0.8921    | 54.10%   | 89.29%              |
-   | LGBM                 | 0.8889    | 52.74%   | 87.27%              |
+      | Model                | AUC       | TPR      | Predictive Equality |
+      |----------------------|-----------|----------|---------------------|
+      | Logistic Regression  | 0.8697    | 47.12%   | 95.99%              |
+      | Random Forest        | 0.8701    | 48.33%   | 99.96%              |
+      | XGBoost              | 0.8858    | 52.08%   | 85.67%              |
+      | Deep Learning        | 0.8819    | 50.49%   | 63.85%              |
+      | AdaBoost             | 0.8827    | 51.77%   | 100.00%             |
+      | CatBoost             | 0.8921    | 54.10%   | 89.29%              |
+      | LGBM                 | 0.8889    | 52.74%   | 87.27%              |
 
 
 
