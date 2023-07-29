@@ -75,5 +75,17 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 
 2. Fairness Metric: Predictive Equality (FPR Balance)
    - Description: The fairness metric, Predictive Equality, is used to assess the fairness of the model's predictions across protected groups in the dataset. The authors measure the difference (or ratio) in False Positive Rate (FPR) between different demographic groups, considering the thresholds that yield a global 5% False Positive Rate. The choice of this fairness metric is justified by the nature of the classification scenario: a false positive may result in denying a bank account to a legitimate applicant, which can have significant societal impacts, while a false negative mainly incurs losses to the bank company.
+  
+
+# our repo contain four folders each for one step and the my_package folder which contain the classes used in the implementation:
+1. Step 1 : which contain 7 notebooks one for each model hyperparameter tuning.
+   as we have used the four baseline models and tried catboost,adaboost and lgbm.
+   | Column 1 Header | Column 2 Header | Column 3 Header |
+| --------------- | --------------- | --------------- |
+| Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3 |
+| Row 2, Column 1 | Row 2, Column 2 | Row 2, Column 3 |
+| ...            | ...            | ...            |
+
+   
 
 
