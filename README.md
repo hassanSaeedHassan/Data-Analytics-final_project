@@ -232,9 +232,39 @@ steps and result of experiment:
       | CatBoost             | 0.8921    | 54.10%   | 89.29%              |
       | LGBM                 | 0.8889    | 52.74%   | 87.27%              |
 
+2.Experiment 2:(using random oversampling):
 
+Random Oversampling is one of the techniques used to address imbalanced data in a classification problem. It involves increasing the number of instances in the minority class by duplicating some of its samples randomly. The goal of random oversampling is to balance the class distribution and provide the classifier with enough examples from the minority class to learn better.
 
+Here are some reasons why one might use random oversampling on imbalanced data:
 
+1. **Improve Minority Class Representation**: In imbalanced datasets, the minority class may have very few samples, leading to poor representation and limited learning opportunities. By oversampling the minority class, you provide the classifier with more examples, making it easier for the model to learn patterns specific to that class.
+
+2. **Address Class Imbalance**: Class imbalance can lead to biased models that favor the majority class. Random oversampling helps mitigate this issue by increasing the number of samples in the minority class, making the class distribution more balanced.
+
+3. **Prevent Overfitting on Majority Class**: When the class distribution is highly imbalanced, the classifier may be biased towards the majority class, resulting in overfitting. Random oversampling helps prevent overfitting by increasing the representation of the minority class and reducing the chances of the model focusing solely on the majority class.
+
+4. **Avoid Information Loss**: Other techniques like undersampling or data augmentation may discard valuable information from the majority class. Random oversampling preserves all the samples from the majority class while creating synthetic samples for the minority class.
+
+However, it's essential to be cautious when using random oversampling, as it can lead to overfitting on the training set. If the random samples from the minority class are too similar to each other, the model may become overly confident in its predictions and struggle to generalize to unseen data.
+
+steps and result of experiment:   
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are:
+
+         | Model            | AUC      | TPR     | Predictive Equality |
+         |------------------|----------|---------|---------------------|
+         | Logistic Regression | 0.8652 | 46.35% | 92.96%             |
+         | Random Forest       | 0.8724 | 48.12% | 99.79%             |
+         | XGBoost             | 0.8863 | 53.27% | 88.72%             |
+         | Deep Learning       | 0.8845 | 53.27% | 78.64%             |
+         | AdaBoost            | 0.8874 | 53.02% | 100.00%            |
+         | CatBoost            | 0.8937 | 54.76% | 85.90%             |
+         | LGBM                | 0.8916 | 54.03% | 83.86%             |
 
 
 
