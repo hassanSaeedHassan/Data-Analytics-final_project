@@ -266,6 +266,41 @@ steps and result of experiment:
          | CatBoost            | 0.8937 | 54.76% | 85.90%             |
          | LGBM                | 0.8916 | 54.03% | 83.86%             |
 
+## 3.Experiment 3 (using smote -nc variant):
+SMOTE-NC (SMOTE for Nominal and Continuous features) is a variant of the Synthetic Minority Over-sampling Technique (SMOTE) that is specifically designed to handle datasets with both numerical (continuous) and categorical (nominal) features. It extends the original SMOTE algorithm to create synthetic samples for imbalanced datasets containing mixed data types.
+
+The reasons to use SMOTE-NC on imbalanced data are as follows:
+
+1. **Preserving Data Structure**: In real-world datasets, it is common to have a mix of numerical and categorical features. Using traditional SMOTE on such datasets may not consider the unique characteristics of categorical features, leading to synthetic samples that do not represent the original data's structure accurately. SMOTE-NC addresses this issue by handling both numerical and categorical features appropriately, preserving the data structure.
+
+2. **Addressing Class Imbalance**: Imbalanced datasets have significantly fewer instances of the minority class compared to the majority class. This imbalance can lead to biased models that favor the majority class. SMOTE-NC helps alleviate class imbalance by generating synthetic samples for the minority class, increasing its representation in the dataset.
+
+3. **Enhancing Generalization**: SMOTE-NC can improve the generalization ability of classifiers trained on imbalanced data. By generating synthetic samples, the classifier is exposed to more diverse instances of the minority class, reducing the risk of overfitting to the limited training data.
+
+4. **Fairness Considerations**: When dealing with imbalanced data, fairness becomes a critical concern. SMOTE-NC can help improve fairness by providing a more balanced representation of different classes and potentially reducing the bias towards the majority class.
+
+5. **Avoiding Data Loss**: Some resampling techniques, like random undersampling, remove instances from the majority class, resulting in data loss and a reduced training set size. SMOTE-NC, being an oversampling technique, retains all instances of the original data while creating synthetic samples for the minority class.
+
+steps and results:
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are:
+    
+        
+      | Model              | AUC     | TPR    | Predictive Equality |
+      |--------------------|---------|--------|---------------------|
+      | Logistic Regression| 0.8384  | 40.58% | 80.36%              |
+      | Random Forest      | 0.8582  | 44.48% | 100.00%             |
+      | XGBoost            | 0.8443  | 42.81% | 100.00%             |
+      | Deep Learning      | 0.8393  | 38.60% | 61.05%              |
+      | AdaBoost           | 0.8467  | 42.77% | 100.00%             |
+      | CatBoost           | 0.8567  | 45.59% | 55.84%              |
+      | LGBM               | 0.8462  | 43.71% | 65.23%              |
+
+
 
 
 
