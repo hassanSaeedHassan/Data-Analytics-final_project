@@ -142,6 +142,40 @@ The tuning and addition of new models have led to improvements in both performan
          | CatBoost(after tuning again) |0.893 | 54.93%      |  85.81%|
          | LGBM |0.882|50.38%     |    79.88%|
 
+2.Experiment 2 : 
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count','bank_months_count'
+   - 3. didn't handle the outliers.
+   - 4. use robust scaler for numerical features and label encoding to categorical features.
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are :
+         | Model     | AUC | TPR    | Predictive equality  |
+         | --------- | --- | ------------- |-----------|
+         | Logistic Regression     | 0.859 |  44.89%     | 92.65%|
+         | Random Forest     |  0.875 |   48.19%      |98.92%|
+         | Neural Network  | 0.8749  | 48.26%     | 92.91%|
+         | AdaBoost |0.885  |52.61%   |  100.0%|
+         | XGBoost | 0.884  | 51.11%     | 80.259%|
+         | CatBoost(after tuning again) |0.893 |55.35%        |   87.51%|
+         | LGBM |0.882|50.42%     |    79.69%|
+
+
+3.Experiment 3 : 
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count','bank_months_count'
+   - 3. didn't handle the outliers.
+   - 4. use robust scaler for numerical features and label encoding to categorical features.
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are :
+         | Model     | AUC | TPR    | Predictive equality  |
+         | --------- | --- | ------------- |-----------|
+         | Logistic Regression     | 0.859 |  44.89%     | 92.65%|
+         | Random Forest     |  0.875 |   48.19%      |98.92%|
+         | Neural Network  | 0.8749  | 48.26%     | 92.91%|
+         | AdaBoost |0.885  |52.61%   |  100.0%|
+         | XGBoost | 0.884  | 51.11%     | 80.259%|
+         | CatBoost(after tuning again) |0.893 |55.35%        |   87.51%|
+         | LGBM |0.882|50.42%     |    79.69%|
 
 
 
