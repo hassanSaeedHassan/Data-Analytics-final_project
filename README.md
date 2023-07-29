@@ -67,4 +67,13 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 6. Dataset Variant V:
    - Description: Variant V provides better separability in the training dataset for one of the demographic groups in the fraud detection task. It evaluates how well ML models perform when the training data has clear boundaries for a specific group's features.
    - Example: In variant V, the training data contains highly distinct patterns and features for fraudulent transactions associated with Group A, making them easily separable. However, for Group B, the fraudulent transactions have less distinct features, leading to potential challenges in generalizing the model to detect fraud for Group B in real-world scenarios.
+  
+## The evaluation metrics :
+
+1. Performance Metric: Recall @ 5% FPR (False Positive Rate)
+   - Description: The performance metric focuses on evaluating the model's ability to correctly identify fraudulent transactions (True Positive Rate) while controlling the False Positive Rate at 5%. Since fraud is a highly imbalanced task with approximately 1% fraud labels, accuracy alone is not adequate. Therefore, the authors use Recall, which measures the proportion of actual fraud cases correctly identified by the model, ensuring that the model is not biased towards predicting non-fraudulent transactions to achieve high accuracy.
+
+2. Fairness Metric: Predictive Equality (FPR Balance)
+   - Description: The fairness metric, Predictive Equality, is used to assess the fairness of the model's predictions across protected groups in the dataset. The authors measure the difference (or ratio) in False Positive Rate (FPR) between different demographic groups, considering the thresholds that yield a global 5% False Positive Rate. The choice of this fairness metric is justified by the nature of the classification scenario: a false positive may result in denying a bank account to a legitimate applicant, which can have significant societal impacts, while a false negative mainly incurs losses to the bank company.
+
 
