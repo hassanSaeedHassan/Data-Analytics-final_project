@@ -82,13 +82,14 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
    as we have used the four baseline models and tried catboost,adaboost and lgbm.
 ## results of the first step
 
-| model     | AUC | TPR    | Predictive equality  |
+| Model     | AUC | TPR    | Predictive equality  |
 | --------- | --- | ------------- |-----------|
-| Logistic Regression     | 0.879 | 49.65%      |88.429|
-| Sarah     | 28  | Designer      |88.429|
-| Michael   | 35  | Developer     |88.429|
+| Logistic Regression     | 0.879 | 49.65%      |88.42%|
+| Random Forest     | 0.872 | 48.68%     |96.23%|
+| Neural Network  | 0.884  | 52.19%     | 99.25%|
 
 
-   
+
+
 
 
