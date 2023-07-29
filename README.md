@@ -87,6 +87,12 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 | Logistic Regression     | 0.879 | 49.65%      |88.42%|
 | Random Forest     | 0.872 | 48.68%     |96.23%|
 | Neural Network  | 0.884  | 52.19%     | 99.25%|
+| AdaBoost | 0.893  | 52.40%     |  100.0%|
+| XGBoost | 0.886  |54.66%     |  88.81%|
+| CatBoost | 0.895  |55.14%    |   86.27%|
+| LGBM |0.886  |51.91%    |    79.99%|
+
+
 
 
 
