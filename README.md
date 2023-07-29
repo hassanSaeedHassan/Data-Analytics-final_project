@@ -424,6 +424,64 @@ steps and results:
       | LGBM                | 0.9343 | 71.58% | 62.57% |
 
 
+## 7.Experiment 7 (using undersampling near miss then oversampling smote nc and stratifying):
+
+steps and results:
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. split the data into train and test using stratification.
+   - 5. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 6. we have used the same hyperparameter earned from step 1 for each model.
+   - 7. the results of this experiment are:
+
+
+      | Model             | AUC               | TPR     | Predictive Equality |
+      |-------------------|-------------------|---------|---------------------|
+      | Logistic Regression | 0.8932 | 56.98% | 81.77% |
+      | Random Forest       | 0.9210 | 65.50% | 94.18% |
+      | XGBoost             | 0.9451 | 75.70% | 65.07% |
+      | Deep Learning       | 0.9018 | 58.57% | 67.81% |
+      | AdaBoost            | 0.9285 | 69.49% | 100.00% |
+      | CatBoost            | 0.9546 | 79.69% | 55.26% |
+      | LGBM                | 0.9489 | 77.70% | 56.87% |
+
+
+# Step 4 : 
+since the last experiment with nearmiss for undersampling followed by stratifying while creating the train and test sets then apply smote nc on the train data get the highest results.
+we use the same technique with the preporcessing done in experiment 7 in step 3 on all the variants of the dataset and here are the reuslts.
+- if we concern about the fairness and final output we could use adaboost and this is because of the following results:
+
+| Model           | AUC              | TPR     | Predictive Equality |
+|-----------------|------------------|---------|---------------------|
+| Base AdaBoost   | 0.9346 | 72.08% | 100.0% |
+| Variant 1 AdaBoost | 0.9324 | 69.63% | 100.0% |
+| Variant 2 AdaBoost | 0.9378 | 71.21% | 100.0% |
+| Variant 3 AdaBoost | 0.9329 | 70.67% | 100.0% |
+| Variant 4 AdaBoost | 0.9383 | 72.21% | 100.0% |
+| Variant 5 AdaBoost | 0.9310 | 69.58% | 100.0% |
+
+The Predictive Equality score of 100.0% indicates that all variants achieve perfect fairness, with no disparity in the False Positive Rate (FPR) across protected groups. This means that all variants of the AdaBoost model are highly fair models.and for AUC the value slightly changes,indicating that the architecture could work on the five variants.
+
+- but if we only concern on the fraud detection then we could use catboost which gives us those results:
+
+
+| Model               | AUC              | TPR     | Predictive Equality |
+|---------------------|------------------|---------|---------------------|
+| CatBoost Base       | 0.9535 | 80.37% | 58.40% |
+| CatBoost Variant 1  | 0.9538 | 77.88% | 98.03% |
+| CatBoost Variant 2  | 0.9549 | 79.37% | 55.36% |
+| CatBoost Variant 3  | 0.9534 | 78.47% | 92.92% |
+| CatBoost Variant 4  | 0.9561 | 80.05% | 63.03% |
+| CatBoost Variant 5  | 0.9520 | 78.15% | 87.26% |
+
+
+
+
+
+
+
+
 
 
 
