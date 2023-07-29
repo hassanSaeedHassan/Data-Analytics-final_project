@@ -197,7 +197,7 @@ The tuning and addition of new models have led to improvements in both performan
 
 
 # Step 3 handling the imbalanced problem:
-1.Experiment 1:(using random undersampling)
+## 1.Experiment 1:(using random undersampling)
 Here are some reasons why one might use random undersampling on imbalanced data:
 
 1. **Address Class Imbalance**: In imbalanced datasets, the majority class may dominate the learning process, leading to biased models that perform poorly on the minority class. By undersampling the majority class, you balance the class distribution, allowing the model to give more attention to the minority class during training.
@@ -232,7 +232,7 @@ steps and result of experiment:
       | CatBoost             | 0.8921    | 54.10%   | 89.29%              |
       | LGBM                 | 0.8889    | 52.74%   | 87.27%              |
 
-2.Experiment 2:(using random oversampling):
+## 2.Experiment 2:(using random oversampling):
 
 Random Oversampling is one of the techniques used to address imbalanced data in a classification problem. It involves increasing the number of instances in the minority class by duplicating some of its samples randomly. The goal of random oversampling is to balance the class distribution and provide the classifier with enough examples from the minority class to learn better.
 
