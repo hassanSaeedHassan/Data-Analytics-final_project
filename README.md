@@ -336,6 +336,59 @@ steps and results:
          | CatBoost           | 0.8791    | 51.18%    | 60.85%              |
          | LGBM               | 0.8754    | 50.24%    | 54.95%              |
 
+## 5.Experiment 5 (using ensemble models from imblearn ):
+we found that there are some ensemble models that are designed specificaly to handle the imbalanced datasets automatically without the need for any additional data resampling techniques. These ensemble models can be found at "imblearn" library.
+Below we list some of these models that we will try to assess in this notebook.
+    - Bagging Algorithms
+        - BalancedBaggingClassifier:  A Bagging classifier with additional balancing step to balance the training set at fit time.
+        - BalancedRandomForestClassifier: A balanced random forest randomly under-samples each bootstrap sample to balance it.
+    - Boosting Algorithms
+        - RUSBoostClassifier: Randomly under-sample the dataset before performing a boosting iteration
+        - EasyEnsembleClassifier: The classifier is an ensemble of AdaBoost learners trained on different balanced bootstrap samples. The balancing is achieved by random under-sampling.
+
+n this trial of **Step 3** we performed the same pre-processing steps that were done during Step 2 for fair comparison. Pre-processing done is listed below:
+* Nulls imputation
+* Outliers deletion
+* Scaling numerical features using "Standard Scaler"
+* Encoding the categorical features using "One-hot-encoder"
+
+
+**Thoughts on Training Results**
+
+* During this experiment we tried multiple ensemble models that handle the class imbalance out-of-the-box without the need for manual data resampling techniques.
+
+* BalancedBaggingClassifier
+    *   Since we perfomred bagging of Logistic regression models we can compare this model performance with previously tried logistic regression models.
+    *   We can notice that the AUC and TPR didn't change compared by the LR Basline and Step 1 and Step 2 models however the Predictive Equality (Fairness) has improved significantly from ~86% to ~95%.
+    * so using the bagging with logistic regression has improved the LR performance as it kept the TPR and AUC without degradation and improved the fairness.
+
+
+* BalancedRandomForestClassifier
+    *   Since this ensemble model is just a balanced random forest which randomly under-samples each bootstrap sample to achieve balancing, we can compare its perfomance with the previous random forest models such as the Baseline, Step 1 and Step 2 models.
+    * We can notice immediately that all the metrics have improved for the random forest when we performed balanced bagging where the fairness is improved tremendously from ~37% to 100%.
+    * Also the TPR and AUC have been improved
+
+* RUSBoostClassifier
+    *   In RUSBoost model we used the default decision tree estimator with max depth of one so it resembles an AdaBoost model.
+    * When we compare by AdaBoost we see that the fairness is preserved however the TPR has decreased while the AUC is approximately constant.
+
+
+* EasyEnsembleClassifier
+    *   “EasyEnsemble” is made specificaly from ensembled AdaBoost models combining the bagging and boosting and sampling.
+    * So this model can be compared by AdaBoost models of Baseline, Step 1 and Step 2.
+    * When we compare it by previous AdaBoost implementations we notice that the performance across all metrics is approximately constant suggesting that the base AdaBoost model is the best we can achieve using this model class as no improvement is noticed as with other models.
+ 
+
+
+| Model                      | AUC       | TPR       | Predictive Equality |
+|----------------------------|-----------|-----------|---------------------|
+| Balanced Bagging Classifier| 0.8777    | 49.42%    | 95.37%              |
+| Balanced Random Forest     | 0.8542    | 41.29%    | 100.00%             |
+| RUS Boosting Classifier    | 0.8774    | 48.98%    | 100.00%             |
+| Easy Ensemble Classifier   | 0.8861    | 52.08%    | 100.00%             |
+
+
+
 
 
 
