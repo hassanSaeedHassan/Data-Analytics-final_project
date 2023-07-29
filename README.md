@@ -302,5 +302,44 @@ steps and results:
 
 
 
+## 4.Experiment 4 (using undersampling then oversampling ):
+Benefits of using undersampling_then_oversampling:
+
+- Improved Generalization: By balancing the class distribution, the model becomes less biased towards the majority class and can learn patterns from the minority class more effectively, leading to improved generalization and better performance on unseen data.
+
+- Reduced Overfitting: Addressing class imbalance with a balanced dataset can help reduce overfitting, as the model is less likely to memorize the majority class instances.
+
+- Fairness Considerations: The resampling strategy aims to achieve fairness by providing an equal representation of different classes, reducing the risk of biased predictions towards the majority class.
+
+- Computationally Efficient: Compared to some other resampling techniques, combining undersampling and oversampling is computationally less expensive, as it requires fewer synthetic samples.
+
+
+steps and results:
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are:
+
+      | Model              | AUC     | TPR    | Predictive Equality |
+      |--------------------|---------|--------|---------------------|
+      | Logistic Regression| 0.8509  | 43.29% | 74.09%              |
+      | Random Forest      | 0.8663  | 45.21% | 90.91%              |
+      | XGBoost            | 0.8742  | 49.76% | 57.10%              |
+      | Deep Learning      | 0.8648  | 45.21% | 54.34%              |
+      | AdaBoost           | 0.8727  | 48.85% | 100.00%             |
+      | CatBoost           | 0.8791  | 51.18% | 60.85%              |
+      | LGBM               | 0.8754  | 50.24% | 54.95%              |
+
+
+
+
+
+
+
+
+
+
 
 
