@@ -80,11 +80,11 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 # our repo contain four folders each for one step and the my_package folder which contain the classes used in the implementation:
 1. Step 1 : which contain 7 notebooks one for each model hyperparameter tuning.
    as we have used the four baseline models and tried catboost,adaboost and lgbm.
-   | Column 1 Header | Column 2 Header | Column 3 Header |
+| Column 1 Header | Column 2 Header | Column 3 Header |
 | --------------- | --------------- | --------------- |
 | Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3 |
 | Row 2, Column 1 | Row 2, Column 2 | Row 2, Column 3 |
-| ...            | ...            | ...            |
+
 
    
 
