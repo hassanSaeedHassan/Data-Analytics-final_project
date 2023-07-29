@@ -221,6 +221,7 @@ steps and result of experiment:
    - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
    - 5. we have used the same hyperparameter earned from step 1 for each model.
    - 6. the results of this experiment are:
+        
       | Model                | AUC       | TPR      | Predictive Equality |
       |----------------------|-----------|----------|---------------------|
       | Logistic Regression  | 0.8697    | 47.12%   | 95.99%              |
