@@ -388,6 +388,42 @@ n this trial of **Step 3** we performed the same pre-processing steps that were 
 | Easy Ensemble Classifier   | 0.8861    | 52.08%    | 100.00%             |
 
 
+## 6.Experiment 6 (using undersampling near miss then oversampling smote nc):
+Benefits of using undersampling_then_oversampling:
+
+Using NearMiss as an undersampling technique and SMOTE-NC (SMOTE for Nominal and Continuous features) as an oversampling technique in the same experiment can be a beneficial approach for dealing with imbalanced datasets.
+
+1. **Addressing Class Imbalance**: NearMiss and SMOTE-NC both aim to address class imbalance, but they do it in different ways. NearMiss selects the majority class samples that are close to the minority class samples, effectively reducing the imbalance by removing instances. On the other hand, SMOTE-NC generates synthetic minority class samples by interpolating feature values, effectively increasing the number of instances in the minority class.
+
+2. **Complementary Effects**: NearMiss focuses on preserving the boundary information between classes, which can be beneficial in scenarios where the classes have distinct clusters and are well-separated. It can help to improve the classifier's generalization by removing some redundant and noisy samples from the majority class.
+
+3. **Handling Continuous and Categorical Features**: SMOTE-NC is specifically designed to handle datasets with both continuous and categorical features. It extends the original SMOTE algorithm to consider both types of features during the synthetic sample generation process, making it suitable for more diverse datasets.
+
+4. **Better Generalization**: By combining NearMiss and SMOTE-NC, you can potentially create a more balanced dataset that retains essential information from both classes, leading to improved generalization of the classifier. It helps to create a more representative dataset that can better capture the underlying data distribution.
+
+5. **Avoiding Overfitting**: Using both undersampling and oversampling techniques in combination can help avoid potential overfitting issues that may arise when using only one of the methods. By carefully balancing the class distribution, you reduce the chances of the model being biased towards either class.
+
+
+
+steps and results:
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are:
+
+      | Model             | AUC               | TPR     | Predictive Equality |
+      |-------------------|-------------------|---------|---------------------|
+      | Logistic Regression | 0.8946 | 57.44% | 68.26% |
+      | Random Forest       | 0.9138 | 62.30% | 91.18% |
+      | XGBoost             | 0.9372 | 73.31% | 57.96% |
+      | Deep Learning       | 0.8648 | 45.21% | 54.34% |
+      | AdaBoost            | 0.9100 | 63.17% | 100.00% |
+      | CatBoost            | 0.9414 | 75.30% | 60.79% |
+      | LGBM                | 0.9343 | 71.58% | 62.57% |
+
+
 
 
 
