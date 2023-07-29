@@ -185,15 +185,18 @@ The tuning and addition of new models have led to improvements in both performan
    - 5. we have used the same hyperparameter earned from step 1 for each model.
    - 6. the results of this experiment are :
 
-      | Model              | AUC       | TPR     | Predictive Equality |
-      | ------------------ | --------- | ------- | ------------------- |
-      | Logistic Regression| 0.860     | 45.52%  | 100.00%             |
-      | Random Forest      | 0.871     | 47.12%  | 100.00%             |
-      | XGBoost            | 0.884     | 52.47%  | 100.00%             |
-      | Deep Learning      | 0.884     | 51.39%  | 100.00%             |
-      | AdaBoost           | 0.885     | 52.50%  | 100.00%             |
-      | CatBoost           | 0.892     | 54.55%  | 100.00%             |
-      | LGBM               | 0.876     | 49.44%  | 100.00%             |
+
+      | Model              | AUC       | TPR       | Predictive Equality |
+      |--------------------|-----------|-----------|---------------------|
+      | Logistic Regression| 0.8646    | 45.97%    | 90.09%              |
+      | Random Forest      | 0.8724    | 48.05%    | 99.77%              |
+      | XGBoost            | 0.8863    | 52.22%    | 82.13%              |
+      | Deep Learning      | 0.8840    | 51.18%    | 93.76%              |
+      | AdaBoost           | 0.8874    | 52.81%    | 100.0%              |
+      | CatBoost           | 0.8933    | 54.86%    | 86.46%              |
+      | LGBM               | 0.8789    | 49.79%    | 80.52%              |
+
+
 
 
 # Step 3 handling the imbalanced problem:
@@ -322,15 +325,17 @@ steps and results:
    - 5. we have used the same hyperparameter earned from step 1 for each model.
    - 6. the results of this experiment are:
 
-      | Model              | AUC     | TPR    | Predictive Equality |
-      |--------------------|---------|--------|---------------------|
-      | Logistic Regression| 0.8509  | 43.29% | 74.09%              |
-      | Random Forest      | 0.8663  | 45.21% | 90.91%              |
-      | XGBoost            | 0.8742  | 49.76% | 57.10%              |
-      | Deep Learning      | 0.8648  | 45.21% | 54.34%              |
-      | AdaBoost           | 0.8727  | 48.85% | 100.00%             |
-      | CatBoost           | 0.8791  | 51.18% | 60.85%              |
-      | LGBM               | 0.8754  | 50.24% | 54.95%              |
+
+         | Model              | AUC       | TPR       | Predictive Equality |
+         |--------------------|-----------|-----------|---------------------|
+         | Logistic Regression| 0.8509    | 43.29%    | 74.09%              |
+         | Random Forest      | 0.8663    | 45.21%    | 90.91%              |
+         | XGBoost            | 0.8742    | 49.76%    | 57.10%              |
+         | Deep Learning      | 0.8648    | 45.21%    | 54.34%              |
+         | AdaBoost           | 0.8727    | 48.85%    | 100.00%             |
+         | CatBoost           | 0.8791    | 51.18%    | 60.85%              |
+         | LGBM               | 0.8754    | 50.24%    | 54.95%              |
+
 
 
 
