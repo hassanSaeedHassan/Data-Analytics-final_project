@@ -177,5 +177,23 @@ The tuning and addition of new models have led to improvements in both performan
          | CatBoost(after tuning again) |0.885 |51.94%         |  91.97%|
          | LGBM |0.871| 46.9%      |   82.56%|
 
+4.Experiment 4 : 
+   - 1. we have replaced the -1 values to nan according to the data sheet.
+   - 2. handle the missing values using mean and mode also deleted 'prev_address_months_count'
+   - 3. keep the outliers from the dataset.
+   - 4. use robust  scaler for numerical features and one hot encoding encoding to categorical features.but delete the last column created for each feauture after one hot encoding manually
+   - 5. we have used the same hyperparameter earned from step 1 for each model.
+   - 6. the results of this experiment are :
+
+      | Model              | AUC       | TPR     | Predictive Equality |
+      | ------------------ | --------- | ------- | ------------------- |
+      | Logistic Regression| 0.860     | 45.52%  | 100.00%             |
+      | Random Forest      | 0.871     | 47.12%  | 100.00%             |
+      | XGBoost            | 0.884     | 52.47%  | 100.00%             |
+      | Deep Learning      | 0.884     | 51.39%  | 100.00%             |
+      | AdaBoost           | 0.885     | 52.50%  | 100.00%             |
+      | CatBoost           | 0.892     | 54.55%  | 100.00%             |
+      | LGBM               | 0.876     | 49.44%  | 100.00%             |
+
 
 
