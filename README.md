@@ -80,7 +80,19 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 # our repo contain four folders each for one step and the my_package folder which contain the classes used in the implementation:
 1. Step 1 : which contain 7 notebooks one for each model hyperparameter tuning.
    as we have used the four baseline models and tried catboost,adaboost and lgbm.
-## results of the first step
+
+## the baseline results before tuning:
+-- the preprocessing was only using standard scaler for numerical features and one hot encoding for categorical features.
+| Model     | AUC | TPR    | Predictive equality  |
+| --------- | --- | ------------- |-----------|
+| Logistic Regression     | 0.877 | 49.69%      |89.52%|
+| Random Forest     |  0.805 |33.39%     | 34.14%|
+| Neural Network  | 0.884  | 51.88%     |  84.36%|
+| XGBoost | 0.867  |46.63%      | 76.07%|
+
+
+
+## step 1 results after tuning the models and adding 3 different models
 
 | Model     | AUC | TPR    | Predictive equality  |
 | --------- | --- | ------------- |-----------|
@@ -91,6 +103,26 @@ Sure, let's describe all the dataset variants using examples from a fraud detect
 | XGBoost | 0.886  |54.66%     |  88.81%|
 | CatBoost | 0.895  |55.14%    |   86.27%|
 | LGBM |0.886  |51.91%    |    79.99%|
+
+Certainly! Here are the general comments on the baseline and step 1 results:
+
+### Baseline Results:
+- The logistic regression model shows reasonable performance, with a good AUC and a moderate True Positive Rate (TPR). The fairness evaluation indicates good predictive equality, but there is still room for improvement in fairness across protected groups.
+- The random forest model exhibits lower AUC and TPR compared to other models. Additionally, there are significant disparities in the False Positive Rate (FPR) across protected groups, highlighting the need for improved fairness.
+- The neural network model demonstrates promising results with a high AUC and TPR. However, the fairness evaluation shows some disparities in the FPR across protected groups, indicating room for improvement in fairness.
+- The XGBoost model performs reasonably well with a decent AUC and TPR. However, the fairness evaluation reveals disparities in the FPR between protected groups, suggesting possible fairness enhancements.
+
+### Step 1 Results:
+- After tuning, the logistic regression model's performance remains similar to the baseline, but there is a slight improvement in fairness.
+- The random forest model shows significant improvement in both AUC and TPR compared to the baseline. The most notable enhancement is in predictive equality, indicating improved fairness.
+- The neural network maintains its performance, but there are substantial improvements in fairness, with the predictive equality score significantly increasing.
+- The AdaBoost model demonstrates impressive performance with a high AUC and TPR, achieving perfect fairness with a predictive equality score of 100.0%.
+- the XGBoost model exhibits better performance and improved fairness compared to the baseline.
+- The CatBoost model performs well, with good AUC and TPR, and it shows some improvement in fairness compared to the baseline models.
+- The LGBM model maintains good  performance, and there is some enhancement in fairness, but further improvements are possible.
+
+## comments on the first step:
+The tuning and addition of new models have led to improvements in both performance and fairness metrics. The AdaBoost model stands out as achieving perfect fairness, but it's essential to carefully consider the trade-offs between performance and fairness when selecting the most suitable model for real-world applications.
 
 
 
