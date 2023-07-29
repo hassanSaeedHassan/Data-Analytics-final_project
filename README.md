@@ -126,21 +126,21 @@ The tuning and addition of new models have led to improvements in both performan
 # step 2 :
 ## in step 2 we have conducted four experiments with different preprocessing :
 1.Experiment 1 : 
-   - 1.we have replaced the -1 values to nan according to the data sheet.
+   - 1. we have replaced the -1 values to nan according to the data sheet.
    - 2. handle the missing values using mean and mode.
-   - 3.detect and clip the outliers.
-   - 4.use minmax scaler for numerical features and label encoding to categorical features.
+   - 3. detect and clip the outliers.
+   - 4. use minmax scaler for numerical features and label encoding to categorical features.
    - 5. we have used the same hyperparameter earned from step 1 for each model.
    - 6. the results of this experiment are :
-| Model     | AUC | TPR    | Predictive equality  |
-| --------- | --- | ------------- |-----------|
-| Logistic Regression     | 0.867 | 46.11%     | 89.01%|
-| Random Forest     |  0.801 |  30.330%     |33.839%|
-| Neural Network  | 0.872  | 47.88%     |  93.63%|
-| AdaBoost |0.8893  |53.47%     |  100.0%|
-| XGBoost | 0.888  |52.99%     |  94.11%|
-| CatBoost(after tuning again) |0.893 | 54.93%      |  85.81%|
-| LGBM |0.882|50.38%     |    79.88%|
+         | Model     | AUC | TPR    | Predictive equality  |
+         | --------- | --- | ------------- |-----------|
+         | Logistic Regression     | 0.867 | 46.11%     | 89.01%|
+         | Random Forest     |  0.801 |  30.330%     |33.839%|
+         | Neural Network  | 0.872  | 47.88%     |  93.63%|
+         | AdaBoost |0.8893  |53.47%     |  100.0%|
+         | XGBoost | 0.888  |52.99%     |  94.11%|
+         | CatBoost(after tuning again) |0.893 | 54.93%      |  85.81%|
+         | LGBM |0.882|50.38%     |    79.88%|
 
 
 
