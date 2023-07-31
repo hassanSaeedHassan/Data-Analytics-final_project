@@ -480,8 +480,9 @@ The Predictive Equality score of 100.0% indicates that all variants achieve perf
 
 Segregation of Duties:
 
-| Classes                | Names          |
+| Duties               | Names          |
 |------------------------|------------------|
+| Classes                 |------------------|
 | Data Cleaning           | Hassan Ahmed     |
 | Data Preprocessing      | Amr Sayed        |
 | Modeling                | Bilal Morsy      |
