@@ -478,7 +478,39 @@ The Predictive Equality score of 100.0% indicates that all variants achieve perf
 
 
 
+Segregation of Duties:
 
+| Classes                | Names          |
+|------------------------|------------------|
+| Data Cleaning           | Hassan Ahmed     |
+| Data Preprocessing      | Amr Sayed        |
+| Modeling                | Bilal Morsy      |
+| NN Modeling             | Omar Amer        |
+| Step 0                  |------------------|
+| EDA                     | Belal Morsy      |
+| Comparing Results       | Amr Sayed        |
+| Step 1                  |------------------|
+| LGBM & Random Forest    | Amr Sayed        |
+| XGBoost and AdaBoost    | Hassan Ahmed     |
+| Logistic Regression and Neural Networks | Omar Amer |
+| Catboost                | Bilal Morsy      |
+| Step 2                  |------------------|
+| Pipeline 1              | Amr Sayed        |
+| Pipeline 2              | Bilal Morsy      |
+| Pipeline 3              | Omar Amer        |
+| Pipeline 4              | Hassan Ahmed     |
+| Step 3                  |------------------|
+| Under Sampling         | Amr Sayed        |
+| Over Sampling          | Amr Sayed        |
+| Under Sampling then Over Sampling | Bilal Morsy |
+| SMOTE - NC             | Bilal Morsy      |
+| Imblearn ensemble       | Omar Amer        |
+| Near miss and SMOTE - NC | Hassan Ahmed    |
+| Near miss and SMOTE – NC and Stratifying | Omar Amer |
+| Step 4                  |------------------|
+| (CatBoost and AdaBoost and comparison) | Hassan Ahmed |
+| Readme                  |------------------|
+| Readme                  | Amr Sayed  & Hassan Ahmed     |
 
 
 
